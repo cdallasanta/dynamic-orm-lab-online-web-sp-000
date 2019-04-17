@@ -75,10 +75,10 @@ class InteractiveRecord
       sql = <<-SQL
         SELECT *
         FROM #{table_name}
-        WHERE grade = '?';
+        WHERE name = 'Susan';
       SQL
 
-      DB[:conn].execute(sql, value)
+      DB[:conn].execute(sql)
     end
   end
 end
