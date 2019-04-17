@@ -46,15 +46,24 @@ class InteractiveRecord
   end
 
   def save
+<<<<<<< HEAD
+=======
+    binding.pry
+>>>>>>> c4ed56afa9b14841684b3ed62668eab2ca837e3a
     if self.id
       self.update
     else
       sql = <<-SQL
+<<<<<<< HEAD
         INSERT INTO #{table_name_for_insert} (#{col_names_for_insert})
+=======
+        UPDATE #{table_name_for_insert} (#{col_names_for_insert})
+>>>>>>> c4ed56afa9b14841684b3ed62668eab2ca837e3a
         VALUES (#{values_for_insert})
       SQL
 
       DB[:conn].execute(sql)
+<<<<<<< HEAD
       self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert};")[0][0]
     end
   end
@@ -78,6 +87,9 @@ class InteractiveRecord
       SQL
 
       return DB[:conn].execute(sql)
+=======
+      self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert};")
+>>>>>>> c4ed56afa9b14841684b3ed62668eab2ca837e3a
     end
   end
 end
