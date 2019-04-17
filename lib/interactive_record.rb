@@ -71,7 +71,6 @@ class InteractiveRecord
 
   def self.find_by(attr)
     attr.each do |key, value|
-      binding.pry
       sql = <<-SQL
         SELECT *
         FROM #{table_name}
