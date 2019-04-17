@@ -78,7 +78,7 @@ class InteractiveRecord
         WHERE name = ?;
       SQL
 
-      return DB[:conn].execute(sql, key.to_s, '#{value}')
+      return DB[:conn].execute(sql, key.to_s, "'#{value}'")
     end
   end
 end
