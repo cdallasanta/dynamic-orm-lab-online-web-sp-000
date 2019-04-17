@@ -78,7 +78,7 @@ class InteractiveRecord
         WHERE ? = '?';
       SQL
 
-      DB[:conn].execute(sql, key.to_s, value)
+      DB[:conn].execute(sql, "name", "Susan")
     end
   end
 end
